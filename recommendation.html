@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Travel Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./reviews.html">Reviews</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./recommendation.html">Recommendation</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recommendation">
+            <div class="recommendation-container">
+              <h2>Explore Destinations</h2>
+              <form id="country-form">
+                <label for="country-select">Select a Country:</label>
+                <select id="country-select" required>
+                  <option value="" disabled selected>Select a country</option>
+                  <option value="japan">Japan</option>
+                  <option value="italy">Italy</option>
+                  <option value="australia">Australia</option>
+                </select>
+                <button type="submit" class="suggest-btn">Show Recommendations</button>
+              </form>
+          
+              <div class="country-recommendation" id="country-recommendation" style="display: none;">
+                <h3>Discover the Best of <span id="selected-country">[Country]</span></h3>
+          
+                <!-- Temples Section -->
+<div class="category">
+    <h4>Top Temples</h4>
+    <div class="images">
+      <img src="https://source.unsplash.com/400x300/?temple" alt="Temple 1" data-name="Kinkaku-ji" data-address="Kyoto, Japan" />
+      <img src="https://source.unsplash.com/400x300/?temple,architecture" alt="Temple 2" data-name="Fushimi Inari Shrine" data-address="Kyoto, Japan" />
+    </div>
+  </div>
+  
+  <!-- Beaches Section -->
+  <div class="category">
+    <h4>Best Beaches</h4>
+    <div class="images">
+      <img src="https://source.unsplash.com/400x300/?beach" alt="Beach 1" data-name="Bondi Beach" data-address="Sydney, Australia" />
+      <img src="https://source.unsplash.com/400x300/?beach,tropical" alt="Beach 2" data-name="Whitehaven Beach" data-address="Whitsunday Islands, Australia" />
+    </div>
+  </div>
+  
+  <!-- Restaurants Section -->
+  <div class="category">
+    <h4>Must-Try Food Restaurants</h4>
+    <div class="images">
+      <img src="https://source.unsplash.com/400x300/?restaurant" alt="Restaurant 1" data-name="Sushi Dai" data-address="Tokyo, Japan" />
+      <img src="https://source.unsplash.com/400x300/?food" alt="Restaurant 2" data-name="Osteria Francescana" data-address="Modena, Italy" />
+    </div>
+  </div>
+  
+  <!-- Amusement Parks Section -->
+  <div class="category">
+    <h4>Exciting Amusement Parks</h4>
+    <div class="images">
+      <img src="https://source.unsplash.com/400x300/?amusement-park" alt="Amusement Park 1" data-name="Tokyo Disneyland" data-address="Urayasu, Japan" />
+      <img src="https://source.unsplash.com/400x300/?rollercoaster" alt="Amusement Park 2" data-name="Europa Park" data-address="Rust, Germany" />
+    </div>
+  </div>
+  
+        </section>
+        
+        <footer class="footer">
+            <div class="footer-container">
+              <div class="footer-about">
+                <h3>TravelRecommendations</h3>
+                <p>
+                  Your trusted guide to discovering unforgettable destinations and experiences. 
+                  Start exploring the world with us today!
+                </p>
+              </div>
+              <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./reviews.html">Reviews</a></li>
+                  <li><a href="./contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: support@TravelRecommendations.com</p>
+                <p>Phone: +1 (111) 111-1111</p>
+                <div class="footer-socials">
+                  <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" alt="Facebook" /></a>
+                  <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram" /></a>
+                  <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png" alt="Twitter" /></a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>&copy; 2025 TravelRecommendations. All Rights Reserved.</p>
+            </div>
+          </footer>
+
+    </main>
+    <script>
+        // Recommendations Data
+        const recommendations = {
+            japan: {
+                name: "Japan",
+                temples: [
+                    "https://images.pexels.com/photos/161401/fushimi-inari-taisha-shrine-kyoto-japan-temple-161401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "https://images.pexels.com/photos/8991527/pexels-photo-8991527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                ],  
+                beaches: [
+                    "https://images.pexels.com/photos/21704/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/5220090/pexels-photo-5220090.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+                restaurants: [
+                    "https://images.pexels.com/photos/2070033/pexels-photo-2070033.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/1628020/pexels-photo-1628020.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+                parks: [
+                    "https://images.pexels.com/photos/10161268/pexels-photo-10161268.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/18645094/pexels-photo-18645094/free-photo-of-boats-on-lake-at-chidorigafuchi-park-in-chiyoda-city.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+            },
+            italy: {
+                name: "Italy",
+                temples: [
+                    "https://images.pexels.com/photos/5900596/pexels-photo-5900596.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/17261398/pexels-photo-17261398/free-photo-of-ancient-buildings-ruins-on-hills.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+                beaches: [
+                    "https://images.pexels.com/photos/919234/pexels-photo-919234.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/30346001/pexels-photo-30346001/free-photo-of-colorful-vernazza-waterfront-in-cinque-terre.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+                restaurants: [
+                    "https://images.pexels.com/photos/30368876/pexels-photo-30368876/free-photo-of-charming-street-cafes-in-meran-italy.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/39047/pexels-photo-39047.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+                parks: [
+                    "https://images.pexels.com/photos/30368882/pexels-photo-30368882/free-photo-of-lush-lakeside-scenery-at-toblach-trentino.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/301929/pexels-photo-301929.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+            },
+            australia: {
+                name: "australia",
+                temples: [
+                    "https://images.pexels.com/photos/5900596/pexels-photo-5900596.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/17261398/pexels-photo-17261398/free-photo-of-ancient-buildings-ruins-on-hills.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+                beaches: [
+                    "https://images.pexels.com/photos/919234/pexels-photo-919234.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/30346001/pexels-photo-30346001/free-photo-of-colorful-vernazza-waterfront-in-cinque-terre.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+                restaurants: [
+                    "https://images.pexels.com/photos/30368876/pexels-photo-30368876/free-photo-of-charming-street-cafes-in-meran-italy.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/39047/pexels-photo-39047.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+                parks: [
+                    "https://images.pexels.com/photos/30368882/pexels-photo-30368882/free-photo-of-lush-lakeside-scenery-at-toblach-trentino.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    "https://images.pexels.com/photos/301929/pexels-photo-301929.jpeg?auto=compress&cs=tinysrgb&w=600",
+                ],
+            },
+			
+            // Add other countries similarly (Australia, India, Brazil, USA)
+        };
+
+        // Handle Dropdown Selection
+        document.getElementById("country-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const selectedCountry = document.getElementById("country-select").value;
+            const recommendation = recommendations[selectedCountry];
+            const countryContainer = document.getElementById("country-recommendation");
+            const countryName = document.getElementById("selected-country");
+            const spinner = document.createElement("div");
+            spinner.classList.add("spinner");
+            countryContainer.insertBefore(spinner, countryContainer.firstChild);
+            
+            countryContainer.style.display = "none";
+
+            setTimeout(() => {
+                spinner.remove();
+                countryName.textContent = recommendation.name;
+
+                const categories = ["temples", "beaches", "restaurants", "parks"];
+                categories.forEach((category, index) => {
+                    const categorySection = countryContainer.querySelectorAll('.category')[index];
+                    if (categorySection) {
+                        const images = categorySection.querySelectorAll('.images img');
+                        if (images.length >= 2) {
+                            images[0].src = recommendation[category][0];
+                            images[1].src = recommendation[category][1];
+
+                            images[0].alt = `${recommendation.name} ${category} 1`;
+                            images[1].alt = `${recommendation.name} ${category} 2`;
+                        }
+                    }
+                });
+
+                countryContainer.style.display = "block";
+            }, 1000); // Simulate loading delay
+        });
+    </script>
+</body>
+</html>
